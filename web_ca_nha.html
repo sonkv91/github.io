@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Cá Nhân</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8e2;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #7fbf50;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        #main-content {
+            margin: 20px 0;
+        }
+        .section {
+            background-color: #fff;
+            margin: 10px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            color: #7fbf50;
+        }
+        .upload-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #ffcc00;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .edit-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #ffcc00;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Trang Cá Nhân</h1>
+    </header>
+    <div class="container">
+        <div id="main-content">
+            <div class="section" id="about-me">
+                <h2>Giới Thiệu</h2>
+                <p id="intro">Xin chào! Tôi là một giám sát bảo trì với 5 năm kinh nghiệm. Trong vai trò này, tôi đã quản lý và duy trì hệ thống kỹ thuật của các tòa nhà lớn, đảm bảo rằng mọi thứ hoạt động trơn tru và hiệu quả. Tôi có kỹ năng trong việc sửa chữa, bảo dưỡng và nâng cấp các hệ thống cơ điện, và luôn tìm kiếm cơ hội để cải thiện và tối ưu hóa quy trình làm việc.</p>
+                <button class="edit-btn" onclick="editContent('intro')">Chỉnh sửa</button>
+            </div>
+            <div class="section" id="experience">
+                <h2>Kinh Nghiệm Làm Việc</h2>
+                <ul id="experience-list">
+                    <li>
+                        <strong>Công ty ABC</strong> - Giám sát bảo trì (2019 - Hiện tại)
+                        <p>Quản lý đội ngũ bảo trì, lập kế hoạch và thực hiện các dự án bảo dưỡng và sửa chữa.</p>
+                    </li>
+                    <li>
+                        <strong>Công ty XYZ</strong> - Kỹ thuật viên bảo trì (2015 - 2019)
+                        <p>Thực hiện các nhiệm vụ bảo dưỡng và sửa chữa hàng ngày, đảm bảo hoạt động liên tục của các hệ thống kỹ thuật.</p>
+                    </li>
+                </ul>
+                <button class="edit-btn" onclick="editContent('experience-list')">Chỉnh sửa</button>
+            </div>
+            <div class="section">
+                <h2>Upload Hình Ảnh</h2>
+                <input type="file" id="imageUpload" class="upload-btn">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function editContent(id) {
+            const element = document.getElementById(id);
+            const newText = prompt("Nhập nội dung mới:", element.innerHTML);
+            if (newText !== null) {
+                element.innerHTML = newText;
+            }
+        }
+    </script>
+</body>
+</html>
